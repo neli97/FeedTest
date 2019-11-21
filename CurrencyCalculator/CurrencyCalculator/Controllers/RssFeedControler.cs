@@ -13,7 +13,7 @@ namespace CurrencyCalculator.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RssFeedControler : Controller
+    public class RssFeedsControler : Controller
     {
         private readonly CultureInfo culture = new CultureInfo("en-US");
 
