@@ -1,3 +1,4 @@
+using FixerSharp;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -65,6 +66,16 @@ namespace CurrencyCalculator
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            try
+            {
+                // One-time call to SetApiKey
+                Fixer.SetApiKey("9d0b675f405dcb7d074f6028b02966d8");
+            }
+            catch
+            {
+                //TODO
+            }          
         }
     }
 }
