@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { } 
   
   ngOnInit(){
-    this.http.get<Feed[]>('http://localhost:63330/api/rssfeeds').subscribe(result => {  
+    this.http.get<Feed[]>('http://localhost:62466/api/RssFeedsControler').subscribe(result => {  
       this.latestPosts = result;  
     }, error => console.error(error));  
   } 
