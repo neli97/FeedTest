@@ -13,7 +13,7 @@ import 'rxjs/add/observable/throw';
   providedIn: 'root'
 })
 export class CurrencyService {
-  myAppUrl: string = "http://localhost:62466/api/"; 
+  myAppUrl: string = "http://localhost:62466/api/Currency/"; 
   
 
   constructor(private _http: Http) {

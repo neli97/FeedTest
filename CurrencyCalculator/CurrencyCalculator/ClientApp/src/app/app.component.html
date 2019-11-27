@@ -45,6 +45,13 @@
         </option>
     </select>
 
+    <select class="form-control" data-val="true" formControlName="currency">
+      <option value="">--Select Currency--</option>
+      <option *ngFor="let currencys of currencyList">
+              {{currencys}}
+      </option>
+  </select>
+
     </div>
   </div>
 </form>
