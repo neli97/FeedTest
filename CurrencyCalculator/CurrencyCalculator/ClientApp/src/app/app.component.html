@@ -1,8 +1,8 @@
-<div style="text-align:center">  
+<!-- <div style="text-align:center">  
   <h1 style="margin-top:10px;">  
     Welcome to Angular<b style="color:crimson">8</b> with ASP.NET Core  
   </h1>  
-  <!-- <img width="200" alt="Angular Logo" src="../assets/angular-asp-core.png">   -->
+
   <div class="card" style="margin-left:50px; margin-right:50px; margin-bottom:50px;">  
     <div class="card-header" style="font-weight:bold; font-size:x-large;">  
       C# Corner Latest Posts from RSS Feeds  
@@ -32,5 +32,21 @@
       </div>  
     </div>  
   </div>  
-</div>  
+</div>  -->
+<form [formGroup]="currencyForm">
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Currency</label>
+    <div class="col-md-4">
+
+      <select class="form-control" data-val="true" formControlName="currency">
+        <option value="">--Select Currency--</option>
+        <option *ngFor="let currencys of currencyList">
+                {{currencys}}
+        </option>
+    </select>
+
+    </div>
+  </div>
+</form>
+
 <router-outlet></router-outlet>
