@@ -16,24 +16,26 @@ namespace CurrencyCalculator.Controllers.CurrencyController
         /// Get list with currencies
         /// </summary>
         /// <returns></returns>
-        [Route("~/api/GetCurrencies")]
+        [Route("GetCurrencies")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetCurrencies()
         {
-            return CurrencyOperations.GetCurrencies();
+            IEnumerable<string> currencies = CurrencyOperations.GetCurrencies();
+
+            return Ok(currencies);
         }
 
         /// <summary>
         /// Calculate currency
         /// </summary>
         /// <param name="calculationModel"></param>
-        [Route("~/api/CalculateCurrency")]
+        [Route("CalculateCurrency")]
         [HttpPost]
-        public double CalculateCurrency([FromBody]CurrencyCalculationModel calculationModel)
+        public IActionResult CalculateCurrency([FromBody]CurrencyCalculationModel calculationModel)
         {
             double result = CurrencyOperations.Calculate(calculationModel);
 
-            return result;
+            return Ok(result);
         }
     }
 }
