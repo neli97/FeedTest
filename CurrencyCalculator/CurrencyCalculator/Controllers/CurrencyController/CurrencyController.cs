@@ -18,7 +18,6 @@ namespace CurrencyCalculator.Controllers.CurrencyController
         /// <returns></returns>
         [Route("GetCurrencies")]
         [HttpGet]
-        //public IEnumerable<string> GetCurrencies()
         public IActionResult GetCurrencies()
         {
             IEnumerable<string> currencies = CurrencyOperations.GetCurrencies();
