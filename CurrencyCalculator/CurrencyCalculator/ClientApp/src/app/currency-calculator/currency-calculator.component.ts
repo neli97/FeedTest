@@ -13,20 +13,26 @@ import {FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class CurrencyCalculatorComponent implements OnInit {
 
+  selectedCurrency: string = '';
 
   currencyForm: FormGroup;
-
-  currencyList: Array<any> = [];
+  currencyList: Array<any> = null;
 
   constructor(private curFB: FormBuilder, private _service: CurrencyServiceService) {
     this.currencyForm = this.curFB.group({
-      currency: ['', Validators.required]
-    })
+      selectedCurrency: [null , Validators.required]
+    });
+
+    this.currencyForm.valueChanges.subscribe(_ => {
+      console.log(_);
+    });
    }
 
   ngOnInit() {
     this._service.getCurrency().subscribe( 
-      data => this.currencyList = data
+      data => {
+        this.currencyList = <Array<any>>data;
+      }
   ) 
   }
 
