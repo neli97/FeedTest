@@ -1,0 +1,26 @@
+<form [formGroup] = "currencyForm">
+    <div class="form-group row">
+<mat-card class="example-card">
+        <mat-card-content>
+                <mat-form-field>
+                        <mat-label>Currency To</mat-label>
+                        <mat-select class="form-control" data-val="true" formControlName="currency">
+                          <mat-option *ngFor="let currencys of currencyList">
+                            {{currencys}}
+                          </mat-option>
+                        </mat-select>                        
+                      </mat-form-field>
+                    <div class="example-container">
+
+                    <mat-form-field>
+                            <input matInput placeholder="Number">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                            <input matInput placeholder="Result">
+                    </mat-form-field>
+                    </div>
+        </mat-card-content>
+      </mat-card>
+      </div>
+    </form>
