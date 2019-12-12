@@ -4,19 +4,19 @@
                 <mat-form-field>
                         <mat-label>Currency To</mat-label>
                         <mat-select formControlName="selectedCurrency">
-                          <mat-option *ngFor="let currencyv of currencyList">
+                          <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
                             {{currencyv}}
                           </mat-option>
                         </mat-select>                        
                       </mat-form-field>
-                <!--mat-form-field>
+                <mat-form-field>
                   <mat-label>Currency To</mat-label>
-                  <mat-select class="form-control" data-val="true" formControlName="currency">
-                    <mat-option *ngFor="let currencyss of currencyList">
-                      {{ currencyss }}
+                  <mat-select formControlName="selectedCurrency">
+                    <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
+                      {{currencyv}}
                     </mat-option>
                   </mat-select>
-                </mat-form-field-->
+                </mat-form-field>
 
                     <div class="example-container">
 
