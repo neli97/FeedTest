@@ -1,19 +1,30 @@
 import { Injectable, Inject } from '@angular/core';
-
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+//import { Validators } from '@angular/forms';
+import { Http, Response } from '@angular/http';
 
-//import 'rxjs/add/operator/map'; 
+
+//import { CurrencyCalculatorComponent } from 'src/app/currency-calculator/currency-calculator.component';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+//import { ContentType } from '@angular/http/src/enums';
 //import 'rxjs/add/operator/catch'; 
-//import 'rxjs/add/observable/throw'; 
+//import 'rxjs/add/observable/throw';
+
+
+export interface CurrV {
+  CurrencyTo: string;
+  CurrencyFrom: string;
+  ValueToCalc: number;
+}
+
 @Injectable()
 export class CurrencyServiceService {
 
   myAppUrl: string = "http://localhost:62466/api/Currency/"; 
 
-  constructor(private _http: HttpClient) {
-    
-   
+  constructor(private _http: HttpClient) { 
    }
 
    getCurrency() { 
@@ -22,9 +33,13 @@ export class CurrencyServiceService {
         //.catch(this.errorHandler); 
   }
 
-  /*errorHandler(error: Response) { 
+  postCurrency(data) {
+    return this._http.post(this.myAppUrl + 'CalculateCurrency', data);
+  }
+
+  errorHandler(error: Response) { 
   console.log(error); 
   return Observable.throw(error); 
-  }*/
+  }
 } 
 

@@ -1,33 +1,35 @@
 <form [formGroup] = "currencyForm">
       <mat-card class="example-card">
            <mat-card-content>
+
+             <mat-form-field>
+               <mat-label>Currency To</mat-label>
+               <mat-select formControlName="CurruncyTo">
+                 <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
+                   {{currencyv}}
+                 </mat-option>
+               </mat-select>
+             </mat-form-field>
+
                 <mat-form-field>
-                        <mat-label>Currency To</mat-label>
-                        <mat-select formControlName="selectedCurrency">
+                        <mat-label>Currency From</mat-label>
+                        <mat-select formControlName="CurrencyFFrom">
                           <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
                             {{currencyv}}
                           </mat-option>
                         </mat-select>                        
                       </mat-form-field>
-                <mat-form-field>
-                  <mat-label>Currency To</mat-label>
-                  <mat-select formControlName="selectedCurrency">
-                    <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
-                      {{currencyv}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
+                <div class="example-container">
 
-                    <div class="example-container">
+                  <mat-form-field>
+                    <input  matInput placeholder="Number" FormNameControl="ValueToCalc">
+                  </mat-form-field>
 
-                    <mat-form-field>
-                            <input matInput placeholder="Number">
-                    </mat-form-field>
-
-                    <mat-form-field>
-                            <input matInput placeholder="Result">
-                    </mat-form-field>
-                    </div>
+                  <button mat-button (click)="ButtonClicked()">Calc</button>
+                  <mat-form-field>
+                    <input matInput placeholder="Result">
+                  </mat-form-field>
+                </div>
         </mat-card-content>
       </mat-card>
     </form>
