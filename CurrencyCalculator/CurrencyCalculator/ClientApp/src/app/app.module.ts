@@ -21,8 +21,14 @@ import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
+import { MatChipsModule } from '@angular/material/chips';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { InjectionToken } from '@angular/core';
 import { CurrencyServiceService } from './currency-service.service';
+import { FooterComponent } from './footer/footer.component';
 export const BASE_URL = new InjectionToken<string>('BASE_URL');
 
 
@@ -34,7 +40,8 @@ export const BASE_URL = new InjectionToken<string>('BASE_URL');
     HeaderComponent,
     CurrencyCalculatorComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
 
   ],
   imports: [
@@ -48,7 +55,10 @@ export const BASE_URL = new InjectionToken<string>('BASE_URL');
     MatSidenavModule,MaterialModule,
     MatSelectModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    MatChipsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [
     { provide: BASE_URL , useValue: "http://localhost:62466/api" },

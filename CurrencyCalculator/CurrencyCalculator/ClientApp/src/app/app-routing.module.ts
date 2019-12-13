@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { CurrencyCalculatorComponent } from './currency-calculator/currency-calculator.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from 'src/app/footer/footer.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent },
@@ -19,7 +20,9 @@ const routes: Routes = [
 
   {path: 'about', component: AboutComponent},
 
-  {path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent },
+
+  { path: 'footer', component: FooterComponent },
 
   {path: '', component: LoginComponent},
   
