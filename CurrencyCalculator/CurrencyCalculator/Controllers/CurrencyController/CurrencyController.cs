@@ -33,7 +33,11 @@ namespace CurrencyCalculator.Controllers.CurrencyController
         [HttpPost]
         public IActionResult CalculateCurrency([FromBody]CurrencyCalculationModel calculationModel)
         {
-            double result = CurrencyOperations.Calculate(calculationModel);
+            double? result = CurrencyOperations.Calculate(calculationModel);
+            if(result==null)
+            {
+                return BadRequest();
+            }
 
             return Ok(result);
         }

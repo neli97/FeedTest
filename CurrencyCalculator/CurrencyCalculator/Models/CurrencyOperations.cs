@@ -26,8 +26,12 @@ namespace CurrencyCalculator.Models
             return currencies.ToList();
         }
 
-        public static double Calculate(CurrencyCalculationModel calculationModel)
+        public static double? Calculate(CurrencyCalculationModel calculationModel)
         {
+            if (calculationModel == null || calculationModel.CurrencyFrom == null || calculationModel.CurrencyTo == null)
+            {
+                return null;
+            }
             double result = Fixer.Convert(calculationModel.CurrencyFrom, calculationModel.CurrencyTo, calculationModel.ValueToCalc);
 
             return result;
