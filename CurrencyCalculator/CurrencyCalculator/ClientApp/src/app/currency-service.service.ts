@@ -17,12 +17,15 @@ export interface CurrV {
   CurrencyTo: string;
   CurrencyFrom: string;
   ValueToCalc: number;
+  result: number;
 }
 
 @Injectable()
 export class CurrencyServiceService {
 
-  myAppUrl: string = "http://localhost:62466/api/Currency/"; 
+  myAppUrl: string = "http://localhost:62466/api/Currency/";
+
+  currVData: CurrV[];
 
   constructor(private _http: HttpClient) { 
    }

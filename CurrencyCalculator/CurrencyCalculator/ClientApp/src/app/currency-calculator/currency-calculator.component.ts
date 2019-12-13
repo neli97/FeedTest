@@ -17,30 +17,28 @@ export class CurrencyCalculatorComponent implements OnInit {
   //ValueToCalc: number;
   result: number;
 
-  
   currencyList: Array<any> = null;
 
-  constructor(private curFB: FormBuilder, private _service: CurrencyServiceService) {
-    this.currencyForm = this.curFB.group({
-      CurruncyTo: [null, Validators.required],
-      CurrencyFFrom: [null, Validators.required],
-      ValueToCalc: [null, Validators.required],
-    })
 
+
+  constructor(private curFB: FormBuilder, private _service: CurrencyServiceService) {
+
+    this.currencyForm = this.curFB.group({
+      CurrencyTo: [null, Validators.required],
+      CurrencyFrom: [null, Validators.required],
+      ValueToCalc: [null, Validators.required],
+      result: [null, Validators.required]
+    })
     this.currencyForm.valueChanges.subscribe(_ => {
       console.log(_);
     });
    }
-
   ngOnInit() {
     this._service.getCurrency().subscribe( 
       data => {
         this.currencyList = <Array<any>>data;
       }
     )
-
-    
-    
   }
 
   ButtonClicked() {

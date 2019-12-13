@@ -4,7 +4,7 @@
 
              <mat-form-field>
                <mat-label>Currency To</mat-label>
-               <mat-select formControlName="CurruncyTo">
+               <mat-select formControlName="CurrencyTo">
                  <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
                    {{currencyv}}
                  </mat-option>
@@ -13,7 +13,7 @@
 
                 <mat-form-field>
                         <mat-label>Currency From</mat-label>
-                        <mat-select formControlName="CurrencyFFrom">
+                        <mat-select formControlName="CurrencyFrom">
                           <mat-option *ngFor="let currencyv of currencyList" [value]="currencyv">
                             {{currencyv}}
                           </mat-option>
@@ -22,13 +22,18 @@
                 <div class="example-container">
 
                   <mat-form-field>
-                    <input  matInput placeholder="Number" FormNameControl="ValueToCalc">
+                    <input matInput placeholder="Number" formControlName="ValueToCalc">
                   </mat-form-field>
 
-                  <button mat-button (click)="ButtonClicked()">Calc</button>
+                  <button mat-button (click)="ButtonClicked()">
+
+                    Calc
+                  </button>
+
                   <mat-form-field>
-                    <input matInput placeholder="Result">
+                    <input matInput placeholder="Result" formControlName="result">
                   </mat-form-field>
+
                 </div>
         </mat-card-content>
       </mat-card>
