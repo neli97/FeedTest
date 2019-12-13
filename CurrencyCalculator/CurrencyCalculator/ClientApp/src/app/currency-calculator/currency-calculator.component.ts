@@ -15,7 +15,7 @@ export class CurrencyCalculatorComponent implements OnInit {
   //CurruncyTo: string = '';
   //CurrencyFrom: string = '';
   //ValueToCalc: number;
-  result: number;
+  result: number = 0;
 
   currencyList: Array<any> = null;
 
@@ -27,7 +27,7 @@ export class CurrencyCalculatorComponent implements OnInit {
       CurrencyTo: [null, Validators.required],
       CurrencyFrom: [null, Validators.required],
       ValueToCalc: [null, Validators.required],
-      result: [null, Validators.required]
+      //Result: [null, Validators.required]
     })
     this.currencyForm.valueChanges.subscribe(_ => {
       console.log(_);
@@ -43,8 +43,8 @@ export class CurrencyCalculatorComponent implements OnInit {
 
   ButtonClicked() {
     this._service.postCurrency(this.currencyForm.value).subscribe(data => { this.result = <number>data });
-    console.log(this.currencyForm.value);
-    console.log(this.result);
+
+   
     }
 }
 

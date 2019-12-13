@@ -25,13 +25,10 @@
                     <input matInput placeholder="Number" formControlName="ValueToCalc">
                   </mat-form-field>
 
-                  <button mat-button (click)="ButtonClicked()">
-
-                    Calc
-                  </button>
+                  <button mat-button (click)="ButtonClicked()">Calculate</button>
 
                   <mat-form-field>
-                    <input matInput placeholder="Result" formControlName="result">
+                    <input matInput placeholder="Result" [value]="result | number:'1.4-4'" [readonly]="true">
                   </mat-form-field>
 
                 </div>
