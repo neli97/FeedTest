@@ -1,1 +1,18 @@
-<p>contact works!</p>
+<mat-card class="example-card">
+  <h4>Where we are located</h4>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+
+  <h4>Contact us:</h4>
+  <mat-icon>email</mat-icon>neli.zarkova@abv.bg
+  <mat-icon>phone</mat-icon>+359 89*** ****
+  <p>
+    <mat-icon>email</mat-icon>rosen.lechev@abv.bg
+    <mat-icon>phone</mat-icon>+359 89*** ****
+  </p>
+</mat-card>
+
+<!--<mat-card class="eexample-card">
+  <mat-icon>email</mat-icon>
+</mat-card>-->

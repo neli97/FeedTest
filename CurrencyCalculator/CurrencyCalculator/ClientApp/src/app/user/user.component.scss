@@ -1,13 +1,23 @@
 .example-container {
-    width: 1000x;
-    height: 565px;
-  }
+  width: 1266px;
+  height: 420px;
+  background-image: url();
+  background-color: whitesmoke;
+}
   
   .example-sidenav {
     padding: 60px;
+    background-color: whitesmoke;
+    
   }
 
 .mat-raised-button {
   background-color: darkblue;
   color:white;
+}
+
+.example-card {
+  width: 500px;
+  margin: 0% auto
+  
 }

@@ -26,6 +26,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { InjectionToken } from '@angular/core';
 import { CurrencyServiceService } from './currency-service.service';
 import { FooterComponent } from './footer/footer.component';
@@ -58,7 +60,10 @@ export const BASE_URL = new InjectionToken<string>('BASE_URL');
     HttpModule,
     MatChipsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC0waLzxVaYXpB9fvXL1P5gpoxAp4nBxAs'
+    }),
   ],
   providers: [
     { provide: BASE_URL , useValue: "http://localhost:62466/api" },
